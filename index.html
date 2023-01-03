@@ -4,97 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="rps.js" defer> </script>
+    <link rel="stylesheet" href="rps.css">
     <title>Document</title>
+
     
 </head>
 <body>
 
-   <script>
+    <div class="shadow">
+    <div class="title">
+        <h1>Rock - Paper - Scissors</h2>
+    </div>
 
-    function getComputerChoice() {
-        let num = Math.floor(Math.random() * 3)
-        let choices = ["Rock", "Paper", "Scissors"]
-        return choices[num]
-    }
+    <p class="result">Result</p>
 
-    function playRound(playerSelection, computerSelection) {
+    <div class="subtitle">
+        <h1>Player</h1>
+        <h1>Computer</h1>
+    </div>
 
-        if (playerSelection == "rock") {
-            if (computerSelection == "Rock") {
-                console.log("Its a tie. Rock equals Rock")
-                return "tie"
-            }
-            else if (computerSelection == "Paper") {
-                console.log("You Lose! Paper beats Rock!")
-                return "computer"
-            }
-            else if (computerSelection == "Scissors") {
-                console.log("You win! Rock beats scissors!")
-                return "player"
-            }
-        }
-        else if (playerSelection == "paper") {
-            if (computerSelection == "Rock") {
-                console.log("You win! Paper beats Rock!")
-                return "player"
-            }
-            else if (computerSelection == "Paper") {
-                console.log("Its a tie! Paper equals Paper!")
-                return "tie"
-            }
-            else if (computerSelection == "Scissors") {
-                console.log("You Lose! Scissors beats paper!")
-                return "computer"
-            }
-        }
-        else if (playerSelection == "scissors") {
-            if (computerSelection == "Rock") {
-                console.log("You Lose! Rock beats Scissors!")
-                return "computer"
-            }
-            else if (computerSelection == "Paper") {
-                console.log("You win! Scissors beats Paper!")
-                return "player"
-            }
-            else if (computerSelection == "Scissors") {
-                console.log("It's a tie! Scissors equals Scissors!")
-                return "tie"
-            }
-        }
-    }
+    <div class="fight">
+        <picture class="chosen1"></picture>
+        <h1 class="vs">VS</h1>
+        <picture class="chosen2"></picture>
+    </div>
 
-    function game() {
-        let computerScore = 0;
-        let playerScore = 0;
 
-        for (let i = 0; i < 5; i++) {
-            const playerSelection = prompt("Type Rock, Paper, or Scissors").toLowerCase()
-            const computerSelection = getComputerChoice()
-            
-            switch (playRound(playerSelection, computerSelection)) {
-                case "player":
-                    ++playerScore
-                    break;
-                case "computer":
-                    ++computerScore
-                    break;
-            }
-        }
-
-        if (playerScore > computerScore) {
-            console.log ("You win with " + playerScore + " points! The computer lost with " + computerScore + " points!")
-        } else if (playerScore < computerScore) {
-            console.log ("You lose with " + playerScore + " points! The computer won with " + computerScore + " points!")
-        } else {
-            console.log("Its a tie. You both got " + playerScore + " points!")
-        }
-    }
-       
-    
-    game()
-
-   </script>
-    
+    <div class="buttons">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button  id="scissor">Scissors</button>
+    </div>
+    </div>
 
 </body>
 
