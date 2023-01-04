@@ -1,3 +1,4 @@
+//JavaScript references
 const rock = document.querySelector('#rock')
 const paper = document.querySelector('#paper')
 const scissor = document.querySelector('#scissor')
@@ -6,6 +7,7 @@ const playerImg = document.querySelector('.chosen1')
 const computerImg = document.querySelector('.chosen2')
 const p = document.querySelector('p')
 
+//variables to play game
 let computerSelection;
 let playerSelection;
 let playerScore = 0;
@@ -58,7 +60,6 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-
 // generates random number for random computer selection
 function getComputerChoice() {
     let num = Math.floor(Math.random() * 3);
@@ -68,15 +69,15 @@ function getComputerChoice() {
     return computerChoice[num]
 }
 
+// after 5 rounds the game will show a final score and reset the score and rounds to play again
 function gameEnd (){
     if (rounds == 5) {
         p.textContent = `The Final Score Is ${playerScore} For Player And ${computerScore} For Computer!`
         playerScore = 0
         computerScore = 0
         rounds = 0
+    }
 }
-}
-
 
 
 rock.addEventListener('click', () => {

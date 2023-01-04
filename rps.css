@@ -54,7 +54,7 @@ button {
     border-color: solid Black;
     background-color: white;
     color:black;
-    box-shadow: 3px 3px black;
+    box-shadow: 0px 5px black;
     font-size: 35px;
     padding: 10px;
     padding-right:20px;
@@ -62,9 +62,10 @@ button {
 }
 
 button:hover {
-    background-color: rgb(215, 253, 220);
+    background-color: aliceblue;
 }
 
 button:active {
     box-shadow: 0px 0px black;
+    transform: translateY(3px);
 }
